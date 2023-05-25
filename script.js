@@ -112,7 +112,7 @@ const btnCopiar = document.querySelector(".btn-copiar");
         var contenido = document.querySelector(".texto-resultado").textContent;
         navigator.clipboard.writeText(contenido);
         console.log("holi uwu");
-        alert("Texto copiado");
+        
     })
 
     
