@@ -176,7 +176,7 @@ main{
 
 }
 
-.contenedor-resultado{
+/* .contenedor-resultado{
     width: 320px;
     height: 450px;
     padding-top: 50px;
@@ -191,7 +191,26 @@ main{
     font-size: 25px;
     font-weight: 30;
     height: 300px;
+} */
+
+.contenedor-resultado {
+    width: 320px;
+    height: 450px;
+    padding-top: 50px;
+    margin-left: 25px;
+    font-size: 25px;
+    font-weight: 400;
+    overflow: auto; /* Agregado */
 }
+
+.contenedor-resultado p {
+    color: #495057;
+    font-size: 25px;
+    font-weight: 30;
+    height: 300px;
+    word-wrap: break-word; /* Agregado */
+}
+
 .texto-resultado{
     max-lines: 3;
     word-break: break-all;
