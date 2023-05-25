@@ -107,12 +107,22 @@ function desencriptarTexto(mensaje){
 
 }
 
-const btnCopiar = document.querySelector(".btn-copiar");
-    btnCopiar.addEventListener("click", copiar = () =>{
-        var contenido = document.querySelector(".texto-resultado").textContent;
-        navigator.clipboard.writeText(contenido);
-        console.log("holi uwu");
+// const btnCopiar = document.querySelector(".btn-copiar");
+//     btnCopiar.addEventListener("click", copiar = () =>{
+//         var contenido = document.querySelector(".texto-resultado").textContent;
+//         navigator.clipboard.writeText(contenido);
+//         console.log("holi uwu");
         
-    })
+//     })
 
-    
+const btnCopiar = document.querySelector(".btn-copiar");
+btnCopiar.addEventListener("click", copiar = () => {
+    var contenido = document.querySelector(".texto-resultado").textContent;
+    navigator.clipboard.writeText(contenido)
+        .then(() => {
+            alert("Texto copiado al portapapeles");
+        })
+        .catch((error) => {
+            console.error("Error al copiar el texto:", error);
+        });
+});
