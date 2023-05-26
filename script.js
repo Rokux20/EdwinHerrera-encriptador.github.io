@@ -4,33 +4,65 @@ var muneico = document.querySelector(".contenedor-muneico");
 var resultado = document.querySelector(".texto-resultado");
 var contenedor = document.querySelector(".contenedor-parrafo");
 var resultadoT = document.querySelector(".contenedor-resultado");
+var botonCopiar = document.querySelector("contenedor-copiar");
 
 
 botonEncriptar.onclick = encriptar;
 botonDesencriptar.onclick = desencriptar;
 
-function ocultarAdelante(){
-    muneico.classList.add("ocultar");
-    contenedor.classList.add("ocultar");
+// function ocultarAdelante(){
+//     muneico.classList.add("ocultar");
+//     contenedor.classList.add("ocultar");
+    
+// }
+
+// function mostrar(){
+//     resultadoT.classList.add("mostrar");
+//     botonCopiar.classList.add("mostrar");
+// }
+
+// function encriptar(){
+//     ocultarAdelante();
+//     var cajatexto = recuperarTexto();
+//     resultado.textContent = encriptarTexto(cajatexto);
+//     mostrar();
+// }
+
+// function desencriptar(){
+//     ocultarAdelante();
+//     var cajatexto = recuperarTexto();
+//     resultado.textContent = desencriptarTexto(cajatexto);
+//      mostrar();
+// }
+
+// ... Código anterior ...
+
+function ocultarAdelante() {
+  muneico.classList.add("ocultar");
+  contenedor.classList.add("ocultar");
+  btnCopiar.classList.remove("mostrar");
 }
 
-function mostrar(){
-    resultadoT.classList.add("mostrar");
+function mostrar() {
+  resultadoT.classList.add("mostrar");
+  btnCopiar.classList.add("mostrar");
 }
 
-function encriptar(){
-    ocultarAdelante();
-    var cajatexto = recuperarTexto();
-    resultado.textContent = encriptarTexto(cajatexto);
-    mostrar();
+function encriptar() {
+  ocultarAdelante();
+  var cajatexto = recuperarTexto();
+  resultado.textContent = encriptarTexto(cajatexto);
+  mostrar();
 }
 
-function desencriptar(){
-    ocultarAdelante();
-    var cajatexto = recuperarTexto();
-    resultado.textContent = desencriptarTexto(cajatexto);
-     mostrar();
+function desencriptar() {
+  ocultarAdelante();
+  var cajatexto = recuperarTexto();
+  resultado.textContent = desencriptarTexto(cajatexto);
+  mostrar();
 }
+
+// ... Resto del código ...
 
 function recuperarTexto(){
     var cajatexto = document.querySelector(".cajatexto");
@@ -70,42 +102,34 @@ function encriptarTexto(mensaje){
     return textoFinal; 
 }
 
-function desencriptarTexto(mensaje){
+function desencriptarTexto(mensaje) {
     var texto = mensaje;
     var textoFinal = "";
-     
-    for(var i=0; i <texto.length; i++){
-        if(texto[i] == "a"){
-            textoFinal = textoFinal + "a";
-            i = i+1;
-        }
-
-        else if(texto[i] == "e"){
-            textoFinal = textoFinal + "e";
-            i = i+4;
-        }
-
-        else if(texto[i] == "i"){
-            textoFinal = textoFinal + "i";
-            i = i+3;
-        }
-
-        else if(texto[i] == "o"){
-            textoFinal = textoFinal + "o";
-            i = i+3;
-        }
-
-        else if(texto[i] == "u"){
-            textoFinal = textoFinal + "u";
-            i=i+3;s
-        }
-        else {
-            textoFinal = textoFinal + texto[i];
-        }
+  
+    for (var i = 0; i < texto.length; i++) {
+      if (texto[i] == "a") {
+        textoFinal = textoFinal + "a";
+        i = i + 1;
+      } else if (texto[i] == "e") {
+        textoFinal = textoFinal + "e";
+        i = i + 4;
+      } else if (texto[i] == "i") {
+        textoFinal = textoFinal + "i";
+        i = i + 3;
+      } else if (texto[i] == "o") {
+        textoFinal = textoFinal + "o";
+        i = i + 3;
+      } else if (texto[i] == "u") {
+        textoFinal = textoFinal + "u";
+        i = i + 3;
+      } else {
+        textoFinal = textoFinal + texto[i];
+      }
     }
-    return textoFinal; 
+    return textoFinal;
+  }
+  
 
-}
 
 // const btnCopiar = document.querySelector(".btn-copiar");
 //     btnCopiar.addEventListener("click", copiar = () =>{

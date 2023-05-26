@@ -175,7 +175,13 @@ main{
     
 
 }
-
+.contenedor-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+   
 .contenedor-resultado{
     width: 320px;
     height: 450px;
@@ -184,6 +190,7 @@ main{
     font-size: 25px;
     font-weight: 400;
     display: none;
+    overflow: auto; 
 
 }
 .contenedor-resultado p{
@@ -191,20 +198,17 @@ main{
     font-size: 25px;
     font-weight: 30;
     height: 300px;
-} 
-
-
-
+    word-wrap: break-word; 
+}
 .texto-resultado{
     max-lines: 3;
     word-break: break-all;
 }
+.contenedor-copiar {
+    margin-top: 20px;
 
-.contenedor-copiar{
-
-    position: relative;
-} 
-
+  }
+  
 .btn-copiar{
     width: 328px;
     height: 67px;
@@ -216,12 +220,15 @@ main{
     font-family: 'Inter', sans-serif;
     border: 1px solid #0A3871;
     cursor: pointer;
-    
+    display: none;
 }
 .btn-copiar:hover{
     background-color: #343A40;
     color: white;
 }
+.btn-copiar.mostrar {
+    display: inline;
+  }
 
 .ocultar{
     display: none;
